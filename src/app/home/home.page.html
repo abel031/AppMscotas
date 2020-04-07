@@ -1,7 +1,19 @@
-<ion-header [translucent]="true">
+<ion-header translucent>
   <ion-toolbar>
     <ion-title>
-      Blank
+      <button mat-icon-button [matMenuTriggerFor]="menu1" aria-label="Ej 20">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menu1="matMenu">
+        <button mat-menu-item (click)="irConfig()">
+          <mat-icon>settings_applications</mat-icon>
+          <span>Config</span>
+        </button>
+        <button mat-menu-item (click)="Exit()">
+          <mat-icon>directions_run</mat-icon>
+          <span>Exit</span>
+        </button>
+      </mat-menu>
     </ion-title>
   </ion-toolbar>
 </ion-header>

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <button mat-icon-button [matMenuTriggerFor]="menu1" aria-label="Ej 20">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menu1="matMenu">
+        <button mat-menu-item (click)="irConfig()">
+          <mat-icon>settings_applications</mat-icon>
+          <span>Config</span>
+        </button>
+      </mat-menu>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <mat-card class="login-card">
+    <form #FLogin="ngForm" (ngSubmit)="logIn()">
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="user" type="text" name="usuario" placeholder="Nombre Usuario">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="pwd" type="password" name="passwd" placeholder="Contraseña">
+      </mat-form-field>
+      <br>
+      <button type="submit" mat-raised-button color="primary">
+        <mat-icon>cloud_upload</mat-icon>
+      </button>
+    </form>
+  </mat-card>
+</ion-content>
