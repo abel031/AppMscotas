@@ -19,14 +19,18 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <mat-list> 
+    <!--Lista Duenyos mascotas y Mascotas-->
+    <mat-list-item  class="showhim" >   
+      <tr matLine >
+        <td style="width: 25%;">
+          <button class="showme" (click)="edit(e.idrow)"><mat-icon>edit</mat-icon></button>
+        </td>
+        <td style="width: 25%;" >
+          <button class="showme" (click)="delete(e.idrow)"><mat-icon>delete</mat-icon></button>
+        </td>
+      </tr>
+    </mat-list-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  </mat-list>
 </ion-content>
