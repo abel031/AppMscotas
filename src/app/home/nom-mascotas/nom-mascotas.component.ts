@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { MascotasService } from 'src/app/servicios/mascotas.service';
 
 @Component({
   selector: 'app-nom-mascotas',
@@ -7,8 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NomMascotasComponent implements OnInit {
 
-  constructor() { }
+  @Input() id=0;
+  @Input() camp="";
+  NombreMascota=null;
+
+  constructor(private api:MascotasService) { }
 
   ngOnInit() {}
+
+  ngOnChanges() {
+    this.NombreMascota="Mi Mascota"
+    this.api.getMascota(this.id).subscribe(res=>{
+      if(this.camp==="Nombre") this.NombreMascota=res.nombre;
+      if(this.camp==="Animal") this.NombreMascota=res.animal;
+    })
+  }
 
 }

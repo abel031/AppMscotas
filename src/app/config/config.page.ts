@@ -41,7 +41,7 @@ export class ConfigPage implements OnInit {
     this.ConfigPaso={Paso:this.PASO};
     localStorage.setItem('configPaso', JSON.stringify(this.ConfigPaso));
     //return to main page
-    this.router.navigate([ '/home']);
+    this.router.navigate([ '/home' , 'N']);
   }
 
   //For exit button, just in case

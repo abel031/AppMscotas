@@ -21,8 +21,14 @@
 <ion-content [fullscreen]="true">
   <mat-list> 
     <!--Lista Duenyos mascotas y Mascotas-->
-    <mat-list-item  class="showhim" >   
+    <mat-list-item *ngFor="let d of duenyos"  class="showhim" >   
       <tr matLine >
+        <td>{{d.nombre}}</td>
+        <td>{{d.edad}}</td>
+        <td *ngFor="let m of mascotas" style="width: 25%;">
+            <p *ngIf="m.idDuenyo === d.idDuenyo" ><app-nom-mascotas [id]='m.idAnimal' [camp]='c1' ></app-nom-mascotas></p>
+            <p *ngIf="m.idDuenyo === d.idDuenyo"><app-nom-mascotas [id]='m.idAnimal' [camp]='c2' ></app-nom-mascotas></p>
+        </td>
         <td style="width: 25%;">
           <button class="showme" (click)="edit(e.idrow)"><mat-icon>edit</mat-icon></button>
         </td>

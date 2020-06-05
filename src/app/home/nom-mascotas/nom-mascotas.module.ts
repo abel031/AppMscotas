@@ -8,6 +8,6 @@ import { NomMascotasComponent } from './nom-mascotas.component'
   imports: [
     CommonModule
   ],
-  exports: [ NomMascotasModule ]
+  exports: [ NomMascotasComponent ]
 })
 export class NomMascotasModule { }

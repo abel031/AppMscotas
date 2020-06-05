@@ -37,7 +37,7 @@ export class DuenyosService {
   getDuenyos():Observable<Duenyo[]>{
     let rdo=null;
     if(this.urlExists(this.API_ENDPIONT+'/duenyos')){
-      rdo=this.http.get<Duenyo[]>(this.API_ENDPIONT+'duenyos').pipe(
+      rdo=this.http.get<Duenyo[]>(this.API_ENDPIONT+'/duenyos').pipe(
         catchError(this.handleError('getDuenyos', []))
       );
     }

@@ -23,7 +23,7 @@ export class LoginService {
           let token = "token";
           let u = {username:user, token:token};
           this.StgSesion.setSessionLogedIn(u);
-          this.router.navigateByUrl('/home');
+          this.router.navigateByUrl('/home/N');
         }
       }
     }, err => {

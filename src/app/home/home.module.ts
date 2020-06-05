@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 import { MaterialModule } from '../material.module';
+import { NomMascotasModule } from './nom-mascotas/nom-mascotas.module';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { MaterialModule } from '../material.module';
         path: '',
         component: HomePage
       }
-    ])
+    ]),
+    NomMascotasModule
   ],
   declarations: [HomePage]
 })
