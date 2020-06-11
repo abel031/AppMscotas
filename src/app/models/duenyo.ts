@@ -5,9 +5,11 @@ export class Duenyo {
 }
 
 export class NewDuenyo {
-    idDuenyo:number;
-    nombre:string;
-    edad:number;
+    constructor(
+    idDuenyo:number,
+    nombre:string,
+    edad:number,
+    ){};
 }
 
 export function DuenyosToAJSON(data):Duenyo[]{

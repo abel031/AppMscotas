@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <tr>
+      <td style="width:15%;">
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="/home/R"></ion-back-button>
+        </ion-buttons>
+      </td>  
+      <td style="width: 40%;">  
+        <ion-buttons slot="start">
+          <button [disabled]="FDuenyo.form.invalid"  (click)="onFormSubmit()" color="primary">
+            <mat-icon color="primary">save</mat-icon>Guardar</button>
+        </ion-buttons>
+      </td>
+      <td style="width:10%;"></td>
+      <td style="vertical-align:middle">Editar</td>
+    </tr>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="example-container mat-elevation-z8">
+    <div class="example-loading-shade"
+         *ngIf="isLoadingResults">
+      <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+    <mat-card class="example-card">
+      <form #FDuenyo="ngForm"  (ngSubmit)="onFormSubmit()">
+  
+        <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="duenyo.nombre" type="text"   name="nombre" placeholder="Nombre del duenyo">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width">
+            <input matInput  #codigo="ngModel"
+                    [(ngModel)]="duenyo.edad" type="text" name="edad"   placeholder="Edad del Duenyo"> 
+        </mat-form-field>
+      </form>
+    </mat-card>
+  </div>
+</ion-content>

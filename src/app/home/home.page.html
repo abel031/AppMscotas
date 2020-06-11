@@ -21,19 +21,19 @@
 <ion-content [fullscreen]="true">
   <mat-list> 
     <!--Lista Duenyos mascotas y Mascotas-->
-    <mat-list-item *ngFor="let d of duenyos"  class="showhim" >   
-      <tr matLine >
-        <td>{{d.nombre}}</td>
-        <td>{{d.edad}}</td>
-        <td *ngFor="let m of mascotas" style="width: 25%;">
+    <mat-list-item *ngFor="let d of duenyos"  class="showhim" >
+      <tr matLine>
+        <td style="width: 10%;">{{d.nombre}}</td>
+        <td style="width: 10%;">{{d.edad}}</td>
+        <td *ngFor="let m of mascotas" style="width: 10%;">
             <p *ngIf="m.idDuenyo === d.idDuenyo" ><app-nom-mascotas [id]='m.idAnimal' [camp]='c1' ></app-nom-mascotas></p>
             <p *ngIf="m.idDuenyo === d.idDuenyo"><app-nom-mascotas [id]='m.idAnimal' [camp]='c2' ></app-nom-mascotas></p>
         </td>
         <td style="width: 25%;">
-          <button class="showme" (click)="edit(e.idrow)"><mat-icon>edit</mat-icon></button>
+          <button class="showme" (click)="edit(d.idDuenyo)"><mat-icon>edit</mat-icon></button>
         </td>
         <td style="width: 25%;" >
-          <button class="showme" (click)="delete(e.idrow)"><mat-icon>delete</mat-icon></button>
+          <button class="showme" (click)="delete(d.idDuenyo)"><mat-icon>delete</mat-icon></button>
         </td>
       </tr>
     </mat-list-item>

@@ -47,9 +47,13 @@ export class MascotasService {
   }
 
   getMascota(user:any):Observable<Mascota>{
-    return this.http.get<Mascota>(this.API_ENDPIONT+'/animales?filter[]=idAnimal,eq,'+user).pipe(
+    return this.http.get<Mascota>(this.API_ENDPIONT+'/animales/'+user).pipe(
       catchError(this.handleError<Mascota>(`getMascota Mascota=${user}`))
     );
+  }
+
+  delete(id){
+    return this.http.delete(this.API_ENDPIONT+'/animales/'+id);
   }
 
   urlExists(url) {

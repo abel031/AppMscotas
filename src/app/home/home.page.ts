@@ -83,4 +83,16 @@ export class HomePage implements OnInit{
     this.router.navigate(['/login'])
   }
 
+  async delete(id: any) {
+    console.log(id);
+    await this.api.delete(id)
+      .subscribe(res => {               
+      });
+    this.Refresh();
+  }
+
+  edit(id:any){
+    this.router.navigate(['/duenyo-edit', id]);
+  }
+
 }

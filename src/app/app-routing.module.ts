@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'home/:action', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule), /*canActivate:[AuthGuard]*/},
   { path: 'config', loadChildren: () => import('./config/config.module').then( m => m.ConfigPageModule) },
   { path: 'login', loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule) },
+  { path: 'duenyo-edit/:id', loadChildren: () => import('./home/duenyo-edit/duenyo-edit.module').then( m => m.DuenyoEditPageModule) /*canActivate:[AuthGuard]*/},
 ];
 
 @NgModule({

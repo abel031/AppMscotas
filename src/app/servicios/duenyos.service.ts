@@ -45,9 +45,24 @@ export class DuenyosService {
   }
 
   getDuenyo(user:any):Observable<Duenyo>{
-    return this.http.get<Duenyo>(this.API_ENDPIONT+'/duenyos?filter[]=nombre,eq,'+user).pipe(
+    return this.http.get<Duenyo>(this.API_ENDPIONT+'/duenyos/'+user).pipe(
       catchError(this.handleError<Duenyo>(`getDuenyos Duenyo=${user}`))
     );
+  }
+
+  delete(id){
+    return this.http.delete(this.API_ENDPIONT+'/duenyos/'+id);
+  }
+
+  updateDuenyo(Duenyo) {
+    const headers = new HttpHeaders({
+      'Content-Type':'application/json'
+    });
+    return this.http.put(
+      this.API_ENDPIONT+'/duenyos/'+Duenyo.idDuenyo,
+      Duenyo,
+      {headers:headers}
+    )
   }
 
   urlExists(url) {
