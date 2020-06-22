@@ -8,6 +8,8 @@ const routes: Routes = [
   { path: 'config', loadChildren: () => import('./config/config.module').then( m => m.ConfigPageModule) },
   { path: 'login', loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule) },
   { path: 'duenyo-edit/:id', loadChildren: () => import('./home/duenyo-edit/duenyo-edit.module').then( m => m.DuenyoEditPageModule) /*canActivate:[AuthGuard]*/},
+  { path: 'duenyo-add', loadChildren: () => import('./home/duenyo-add/duenyo-add.module').then( m => m.DuenyoAddPageModule) /*canActivate:[AuthGuard]*/},
+  { path: 'mascotas', loadChildren: () => import('./home/mascotas/mascotas.module').then( m => m.MascotasPageModule) /*canActivate:[AuthGuard]*/},
 ];
 
 @NgModule({

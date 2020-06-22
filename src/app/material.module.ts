@@ -30,11 +30,13 @@ const  MaterialComponents=[
     MatSortModule,
     MatTableModule,
     MatSliderModule,
-    MatMenuModule,MatIconModule,MatListModule,
+    MatMenuModule,
+    MatIconModule,
+    MatListModule,
     MatSidenavModule,
     MatTabsModule,
     MatCheckboxModule,
-    MatDialogModule
+    MatDialogModule,
    
 ];
 

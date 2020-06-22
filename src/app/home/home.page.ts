@@ -95,4 +95,8 @@ export class HomePage implements OnInit{
     this.router.navigate(['/duenyo-edit', id]);
   }
 
+  addElemento(){
+    this.router.navigate(['/duenyo-add'])
+  }
+
 }

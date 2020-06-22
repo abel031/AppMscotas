@@ -65,6 +65,17 @@ export class DuenyosService {
     )
   }
 
+  save (duenyo) {
+    const headers = new HttpHeaders({
+      'Content-Type':'application/json'
+    });
+    return this.http.post(
+      this.API_ENDPIONT+'/duenyos',
+      duenyo,
+      {headers:headers}
+    )
+  }
+
   urlExists(url) {
     return fetch(url, {mode: "no-cors"})
        .then(res => true)

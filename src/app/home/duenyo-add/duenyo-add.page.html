@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home/R"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Añadir Duenyo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="example-container mat-elevation-z8">
+    <div class="example-loading-shade"
+         *ngIf="isLoadingResults">
+      <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+    <mat-card class="example-card">
+      <form [formGroup]="duenyosForm" (ngSubmit)="onFormSubmit()">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Nombre" formControlName="nombre"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!duenyosForm.get('nombre').valid && duenyosForm.get('nombre').touched">Por favor introduce Nombre del Duenyo</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Edad" formControlName="edad"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!duenyosForm.get('edad').valid && duenyosForm.get('edad').touched">Introduce Id del producto</span>
+          </mat-error>
+        </mat-form-field>
+        <div class="button-row">
+          <button type="submit" [disabled]="!duenyosForm.valid" mat-flat-button color="primary"><mat-icon>save</mat-icon></button>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+  </ion-content>

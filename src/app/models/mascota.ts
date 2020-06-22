@@ -7,11 +7,13 @@ export class Mascota {
 }
 
 export class NewMascota {
-    idAnimal:number;
-    idDuenyo:number;
-    animal:string;
-    nombre:string;
-    foto:string;
+    constructor(
+    idAnimal:number,
+    idDuenyo:number,
+    animal:string,
+    nombre:string,
+    foto:string,
+    ){};
 }
 
 export function MascotasToAJSON(data):Mascota[]{

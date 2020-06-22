@@ -19,21 +19,30 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <mat-list> 
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addElemento()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <mat-list > 
     <!--Lista Duenyos mascotas y Mascotas-->
     <mat-list-item *ngFor="let d of duenyos"  class="showhim" >
       <tr matLine>
-        <td style="width: 10%;">{{d.nombre}}</td>
-        <td style="width: 10%;">{{d.edad}}</td>
-        <td *ngFor="let m of mascotas" style="width: 10%;">
-            <p *ngIf="m.idDuenyo === d.idDuenyo" ><app-nom-mascotas [id]='m.idAnimal' [camp]='c1' ></app-nom-mascotas></p>
-            <p *ngIf="m.idDuenyo === d.idDuenyo"><app-nom-mascotas [id]='m.idAnimal' [camp]='c2' ></app-nom-mascotas></p>
-        </td>
-        <td style="width: 25%;">
+        <td matLine style="width: 10%;"><strong> ID: {{d.idDuenyo}}</strong></td>
+        <td style="width: 10%;"><strong>Nom: {{d.nombre}}</strong></td>
+        <td style="width: 25%;"><strong>Edad: {{d.edad}}</strong></td>
+        <td style="width: 10%;">
           <button class="showme" (click)="edit(d.idDuenyo)"><mat-icon>edit</mat-icon></button>
         </td>
-        <td style="width: 25%;" >
+        <td style="width: 10%;" >
           <button class="showme" (click)="delete(d.idDuenyo)"><mat-icon>delete</mat-icon></button>
+        </td>
+        <td style="width: 10%;" >
+          <button class="showme" (click)="detall(d.idDuenyo)"><mat-icon>forward</mat-icon></button>
+        </td>
+        <td matLine *ngFor="let m of mascotas" style="width: 10%;">
+            <p *ngIf="m.idDuenyo === d.idDuenyo" ><app-nom-mascotas [id]='m.idAnimal' [camp]='c1' ></app-nom-mascotas></p>
+            <p *ngIf="m.idDuenyo === d.idDuenyo"><app-nom-mascotas [id]='m.idAnimal' [camp]='c2' ></app-nom-mascotas></p>
         </td>
       </tr>
     </mat-list-item>
