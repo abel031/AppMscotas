@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Mascota } from '../models/mascota';
 import { catchError } from 'rxjs/operators';
@@ -54,6 +54,28 @@ export class MascotasService {
 
   delete(id){
     return this.http.delete(this.API_ENDPIONT+'/animales/'+id);
+  }
+
+  updateMaascota(Mascota) {
+    const headers = new HttpHeaders({
+      'Content-Type':'application/json'
+    });
+    return this.http.put(
+      this.API_ENDPIONT+'/animales/'+Mascota.idMascota,
+      Mascota,
+      {headers:headers}
+    )
+  }
+
+  save (Mascota) {
+    const headers = new HttpHeaders({
+      'Content-Type':'application/json'
+    });
+    return this.http.post(
+      this.API_ENDPIONT+'/animales',
+      Mascota,
+      {headers:headers}
+    )
   }
 
   urlExists(url) {

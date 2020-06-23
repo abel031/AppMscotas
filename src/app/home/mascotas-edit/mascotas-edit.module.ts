@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MascotasPageRoutingModule } from './mascotas-routing.module';
+import { MascotasEditPageRoutingModule } from './mascotas-edit-routing.module';
 
-import { MascotasPage } from './mascotas.page';
+import { MascotasEditPage } from './mascotas-edit.page';
 import { MaterialModule } from 'src/app/material.module';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { MaterialModule } from 'src/app/material.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    MascotasPageRoutingModule,
+    MascotasEditPageRoutingModule,
     MaterialModule
   ],
-  declarations: [MascotasPage]
+  declarations: [MascotasEditPage]
 })
-export class MascotasPageModule {}
+export class MascotasEditPageModule {}

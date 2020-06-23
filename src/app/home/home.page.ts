@@ -99,4 +99,8 @@ export class HomePage implements OnInit{
     this.router.navigate(['/duenyo-add'])
   }
 
+  detall(id:any){
+    this.router.navigate(['mascotas', id])
+  }
+
 }

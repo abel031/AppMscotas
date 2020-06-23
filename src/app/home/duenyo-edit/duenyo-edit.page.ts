@@ -29,8 +29,6 @@ export class DuenyoEditPage implements OnInit {
   editing: boolean = false;
   public duenyo: NewDuenyo = new NewDuenyo(0,'',0);
   errorMessage='';
-  checked = false;
-  indeterminate = false;
 
   constructor(private router:Router, private rutaActiva:ActivatedRoute, private api:DuenyosService) { }
 

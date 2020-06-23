@@ -1,9 +1,39 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>mascotas</ion-title>
+    <ion-title>Mascotas</ion-title>
+    <!--Back button top left-->
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home/R"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addElemento()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <mat-list > 
+    <!--Lista Duenyos mascotas y Mascotas-->
+    <mat-list-item *ngFor="let m of mascotas"  class="showhim" >
+      <tr matLine>
+        <td style="width: 100%;"><strong> ID: {{m.idAnimal}}</strong></td>
+        <td style="width: 10%;">
+          <button class="showme" (click)="edit(m.idAnimal)"><mat-icon>edit</mat-icon></button>
+        </td>
+        <td>
+          <button class="showme" (click)="delete(m.idAnimal)"><mat-icon>delete</mat-icon></button>
+        </td>
+        <td matLine ><strong>Animal: {{m.animal}}</strong></td>
+        <td matLine ><strong>Nombre: {{m.nombre}}</strong></td>
+        <td matLine >
+          <strong>Imagen:</strong>
+          <br/>
+          <img [src]='m.foto' alt="Imagen mascota">
+        </td>
+      </tr>
+    </mat-list-item>
 
+  </mat-list>
 </ion-content>

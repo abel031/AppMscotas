@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home/R"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Añadir Mascota</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="example-container mat-elevation-z8">
+    <div class="example-loading-shade"
+         *ngIf="isLoadingResults">
+      <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+    <mat-card class="example-card">
+      <form [formGroup]="MascotasForm" (ngSubmit)="onFormSubmit()">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="IdDuwnyo" formControlName="idDuenyo"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!MascotasForm.get('idDuenyo').valid && MascotasForm.get('idDuenyo').touched">Introduce Id del duenyo</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Animal" formControlName="animal"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!MascotasForm.get('animal').valid && MascotasForm.get('animal').touched">Por favor introduce Tipo de animal</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Nombre" formControlName="nombre"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!MascotasForm.get('nombre').valid && MascotasForm.get('nombre').touched">Introduce Nombre del Animal</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Foto" formControlName="foto"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!MascotasForm.get('foto').valid && MascotasForm.get('foto').touched">Introduce Nombre de Foto</span>
+          </mat-error>
+        </mat-form-field>
+        <div class="button-row">
+          <button type="submit" [disabled]="!MascotasForm.valid" mat-flat-button color="primary"><mat-icon>save</mat-icon></button>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+  </ion-content>
