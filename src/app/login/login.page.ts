@@ -26,9 +26,5 @@ export class LoginPage implements OnInit {
     this.router.navigate(['/config']);
   }
 
-  irHome(){
-    this.router.navigate(['/home', 'N']);
-  }
-
 
 }
